@@ -13,7 +13,12 @@ const api = axios.create({
 
 
 // fetch data using react query
-export const fetchPosts = async () => {
-  const res = await api.get("/posts");
+export const fetchPosts = async (pageNumber) => {
+  const res = await api.get(`/posts?_start=${pageNumber}&_limit=3`);
+  return res.status === 200 ? res.data : [];
+};
+ // fetch single data
+export const singlePost = async (id) => {
+  const res = await api.get(`posts/${id}`);
   return res.status === 200 ? res.data : [];
 };

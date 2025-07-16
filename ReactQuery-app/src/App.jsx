@@ -5,6 +5,7 @@ import Data from "./pages/Data";
 import "./App.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import DetailPage from "./pages/DetailPage";
 
 function App() {
   const queryClient = new QueryClient();
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="data" element={<Data />} />
+           <Route path="data/:id" element={<DetailPage />} />
         </Route>
       </Routes>
     </QueryClientProvider>

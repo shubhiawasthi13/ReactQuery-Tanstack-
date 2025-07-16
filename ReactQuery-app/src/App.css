@@ -51,3 +51,8 @@ nav a:hover {
 .posts-list li p:last-child {
   color: #555;
 }
+.pagination-btn{
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+}
