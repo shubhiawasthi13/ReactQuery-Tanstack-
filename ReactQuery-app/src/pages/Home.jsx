@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { fetchPosts } from "../API/api";
+import { fetchPostsOld } from "../API/api";
 
 function Home() {
   const [posts, setPosts] = useState([]);
 
   const getPostsData = async () => {
     try {
-      const res = await fetchPosts();
+      const res = await fetchPostsOld();
       if (res.status === 200) {
         setPosts(res.data);
       }
